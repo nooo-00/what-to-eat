@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f6f2">
+    <title>오늘 뭐 먹지?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="picker">
+      <header class="intro">
+        <h1>오늘 뭐 먹지?</h1>
+        <p>후보를 적고 하나를 랜덤으로 뽑아보세요.</p>
+      </header>
+
+      <form id="picker-form" novalidate>
+        <label class="sr-only" for="choices">추첨 후보</label>
+        <textarea id="choices" name="choices" placeholder="후보를 한 줄에 하나씩 입력해주세요." spellcheck="false"></textarea>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <button type="submit">랜덤으로 뽑기</button>
+      </form>
+
+      <section id="result" class="result" aria-live="polite" aria-atomic="true" hidden>
+        <p>오늘은</p>
+        <h2 id="result-text"></h2>
+      </section>
+    </main>
+  </body>
+</html>

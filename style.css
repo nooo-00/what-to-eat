@@ -1,0 +1,86 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
+  color: #292a27;
+  background: #f7f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 64px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picker { width: min(100%, 480px); }
+.intro { margin-bottom: 30px; text-align: center; }
+h1 { margin: 0; font-size: clamp(30px, 7vw, 36px); line-height: 1.25; letter-spacing: -0.045em; }
+.intro p { margin: 10px 0 0; color: #777872; font-size: 15px; line-height: 1.6; }
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 164px;
+  padding: 16px;
+  resize: vertical;
+  border: 1px solid #d9d8d1;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.65;
+  transition: border-color 150ms ease;
+}
+textarea::placeholder { color: #999a93; }
+textarea:focus { border-color: #71845f; }
+
+.message { min-height: 20px; margin: 7px 2px 5px; color: #a34f48; font-size: 13px; }
+button {
+  width: 100%;
+  min-height: 50px;
+  border: 0;
+  border-radius: 11px;
+  background: #647951;
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+button:hover { background: #556944; transform: translateY(-1px); }
+button:focus-visible { outline: 3px solid #a9b99a; outline-offset: 3px; }
+button:active { transform: translateY(0); }
+
+.result {
+  margin-top: 34px;
+  padding: 22px 20px 24px;
+  border: 1px solid #e8e6dd;
+  border-radius: 14px;
+  background: #fbfaf7;
+  text-align: center;
+  animation: appear 180ms ease-out;
+}
+.result[hidden] { display: none; }
+.result p { margin: 0 0 8px; color: #777872; font-size: 15px; }
+.result h2 { margin: 0; overflow-wrap: anywhere; font-size: clamp(28px, 7vw, 38px); font-weight: 700; line-height: 1.35; letter-spacing: -0.035em; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@keyframes appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  body { align-items: flex-start; padding: 56px 20px 40px; }
+  .intro { margin-bottom: 26px; }
+  .result { margin-top: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
