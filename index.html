@@ -15,12 +15,24 @@
         <p>후보를 적고 하나를 랜덤으로 뽑아보세요.</p>
       </header>
 
-      <form id="picker-form" novalidate>
-        <label class="sr-only" for="choices">추첨 후보</label>
-        <textarea id="choices" name="choices" placeholder="후보를 한 줄에 하나씩 입력해주세요." spellcheck="false"></textarea>
-        <p id="message" class="message" role="status" aria-live="polite"></p>
-        <button type="submit">랜덤으로 뽑기</button>
+      <form id="candidate-form" novalidate>
+        <label class="sr-only" for="candidate-input">하고 싶은 일</label>
+        <div class="input-row">
+          <input id="candidate-input" name="candidate" type="text" placeholder="오늘 하고 싶은 일을 적어보세요" autocomplete="off">
+          <button class="add-button" type="submit">추가 +</button>
+        </div>
       </form>
+
+      <section class="candidate-section" aria-labelledby="candidate-heading">
+        <div class="candidate-heading">
+          <h2 id="candidate-heading">하고 싶은 일들</h2>
+          <span id="candidate-count">0개</span>
+        </div>
+        <ul id="candidate-list" class="candidate-list"></ul>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+      <button id="draw-button" class="draw-button" type="button">랜덤으로 뽑기</button>
 
       <section id="result" class="result" aria-live="polite" aria-atomic="true" hidden>
         <p>오늘은</p>
