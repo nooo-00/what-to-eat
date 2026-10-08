@@ -32,11 +32,40 @@
       </section>
 
       <p id="message" class="message" role="status" aria-live="polite"></p>
-      <button id="draw-button" class="draw-button" type="button">랜덤으로 뽑기</button>
+
+      <section class="gacha-section" aria-labelledby="gacha-title">
+        <h2 id="gacha-title">오늘의 가챠</h2>
+        <div class="gacha-machine" aria-label="등록한 메뉴가 들어 있는 가챠머신">
+          <div class="machine-dome" aria-hidden="true">
+            <div id="capsule-bed" class="capsule-bed"></div>
+            <span class="dome-glint"></span>
+          </div>
+          <div class="machine-body" aria-hidden="true">
+            <div class="machine-brand">오늘의 메뉴</div>
+            <div class="machine-knob"><span></span></div>
+            <div class="dispense-slot"><span></span></div>
+            <div class="machine-feet"><span></span><span></span></div>
+          </div>
+        </div>
+
+        <div class="machine-controls">
+          <button id="draw-button" class="draw-button" type="button" disabled>뽑기 시작</button>
+          <p id="machine-status" class="machine-status" role="status" aria-live="polite"></p>
+          <div id="dispensed-area" class="dispensed-area" hidden>
+            <button id="open-capsule" class="open-capsule" type="button" aria-label="당첨 캡슐 열기">
+              <span class="capsule-shell capsule-top"></span>
+              <span class="capsule-shell capsule-bottom"></span>
+              <span id="capsule-reveal" class="capsule-reveal" aria-hidden="true"></span>
+            </button>
+            <p>캡슐을 눌러 열어보세요!</p>
+          </div>
+        </div>
+      </section>
 
       <section id="result" class="result" aria-live="polite" aria-atomic="true" hidden>
-        <p>오늘은</p>
+        <p>오늘은...</p>
         <h2 id="result-text"></h2>
+        <button id="return-button" type="button">기계로 돌아가기</button>
       </section>
     </main>
   </body>
